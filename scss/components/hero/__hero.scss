@@ -2,7 +2,10 @@
 	width: 100%;
 	height: $maxHeightBgHero + px;
 	max-height: $maxHeightBgHero + px;
-	margin-bottom: 154px;
+	margin-bottom: 100px;
+	@include mediaMin(1440) {
+		margin-bottom: 154px;
+	}
 	@include mediaMax(1100) {
 		height: auto;
 		margin-bottom: 0px;

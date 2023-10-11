@@ -13,17 +13,32 @@
 		width: 1575.342px;
 		height: 1076.773px;
 		z-index: -1;
+
+		@include mediaMax(1100) {
+			display: none;
+		}
 	}
 	// .argumentation__container
 	&__container {
+		max-width: 936px;
+		margin: auto;
+		padding: 0px 15px;
 	}
 	// .argumentation__block
 	&__block {
 		padding: 2px 0px 0px 0px;
 		display: flex;
 		justify-content: center;
+		// argumentation__block__reply
 		&__reply {
 			gap: 112px;
+			@include mediaMax(767) {
+				flex-direction: column;
+				gap: 40px;
+			}
+			> * {
+				margin: auto;
+			}
 		}
 	}
 	// .argumentation__title
@@ -36,6 +51,9 @@
 		text-transform: uppercase;
 		text-align: right;
 		max-width: 294px;
+		@include mediaMax(767) {
+			text-align: center;
+		}
 		&::after {
 			content: "";
 			position: absolute;
@@ -46,6 +64,9 @@
 			height: 2px;
 			background-color: $Brown;
 			margin: 26px 0px 0px 0px;
+			@include mediaMax(767) {
+				display: none;
+			}
 		}
 		&__bolder {
 			color: inherit;
@@ -71,13 +92,34 @@
 	}
 }
 .argumentation-icons {
+	margin-top: 92px;
+	ul {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		justify-content: space-between;
+		@include mediaMax(767) {
+			flex-direction: column;
+			gap: 40px;
+		}
+		> * {
+			max-width: 217px;
+		}
+	}
 	// .argumentation-icons__img
 	&__img {
 	}
 	// .argumentation-icons__title
 	&__title {
+		font-size: 2.07rem;
+		font-weight: 400;
+		margin-top: 16px;
 	}
 	// .argumentation-icons__text
 	&__text {
+		font-size: 1.125rem;
+		font-weight: 300;
+		margin-top: 2px;
 	}
 }

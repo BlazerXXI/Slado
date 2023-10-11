@@ -1,23 +1,24 @@
 .header {
-	position: absolute;
-	top: 81.37px;
+	position: fixed;
+	top: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	z-index: 10;
+	z-index: 101;
+	font-size: 18px;
 	@include mediaMax(1100) {
-		position: fixed;
 		top: 0;
 	}
-	font-size: 18px;
 	// .header__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0px 15px;
+		background-color: $whiteColor + fff80;
+		border-radius: 32px;
 		@include mediaMax(1100) {
-			padding: 0px 15px;
-			background-color: $whiteColor + fff80;
+			border-radius: 0px;
 		}
 	}
 	&__button-block:last-child {
@@ -56,6 +57,10 @@
 			display: none;
 			@include mediaMax(1100) {
 				display: flex;
+				img {
+					width: 130px;
+					height: auto;
+				}
 			}
 		}
 	}
@@ -95,9 +100,38 @@
 			height: 50vh;
 			width: 50%;
 			background-color: $whiteColor + ffff9;
-			border-radius: 0px 0px 20px 20px;
+			border-radius: 20px 0px 20px 20px;
 			transition: all 0.6s ease 0s;
 			padding: 15px;
+			&::before {
+				content: "";
+				position: absolute;
+				filter: blur(5px);
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url("../../../img/hero/Bg.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				z-index: -1;
+				border-radius: 20px 0px 20px 20px;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
+				background-image: url("../../../img/argumentation/objects.png");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				z-index: -1;
+				transition: all 1s ease-in 0.3s;
+			}
 
 			font-size: 2rem;
 			display: flex;
@@ -114,8 +148,22 @@
 		.active {
 			opacity: 1;
 			translate: 0;
+			&::after {
+				opacity: 0;
+				animation: fallBreadcrumbs 0.5s ease-in-out forwards;
+				animation-delay: 0.2s;
+			}
 		}
-
+		@keyframes fallBreadcrumbs {
+			from {
+				opacity: 0;
+				transform: translateY(-100%);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 		@include mediaMax(1100) {
 			display: flex;
 		}
