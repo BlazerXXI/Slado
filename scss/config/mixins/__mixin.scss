@@ -1,0 +1,11 @@
+// mixin styles
+@mixin mediaMax($width) {
+	@media (max-width: #{$width + px}) {
+		@content;
+	}
+}
+@mixin mediaMin($width) {
+	@media (min-width: #{$width + px}) {
+		@content;
+	}
+}

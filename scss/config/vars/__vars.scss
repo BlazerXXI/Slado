@@ -1,4 +1,9 @@
 $maxWidth: 1920; // максимальная ширина страницы
+$desktopWidth: 1366; // ширина компьютера
+$maxLaptopWidth: 1100; // ширина ноутбука
+$laptopWidth: 1024; // ширина ноутбука
+$tabletWidth: 767; // ширина планшета
+$mobileWidth: 320; // ширина мобильного устройства
 $minWidth: 320; // минимальная ширина телефона
 $maxWidthContainer: 1310; // ширина контейнера с учетом padding слева и справа
 $containerWidth: 1279; // ширина контейнера из макета
@@ -19,13 +24,15 @@ $blackColor: #131313;
 $grayColor: #6f6f6f;
 $redColor: #ff4040;
 $Brown: #814624;
+$Beige: #fff1ce;
 
-$firstAccentColor: $blackColor;
+$firstAccentColor: $Brown;
 $secondAccentColor: $redColor;
 
 $fontFamily: $mainFont, sans-serif; // Семейство шрифта по умолчанию
-$fontColor: $blackColor; // Цвет шрифта по умолчанию
+$fontColor: $Brown; // Цвет шрифта по умолчанию
 $fontSize: 16; // Размер шрифта по умолчанию
+
 $fontWeight: $mainWeight; // Жирность шрифта по умолчанию
 
 $standartTrans: all 280ms ease-in-out 0ms;

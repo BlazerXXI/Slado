@@ -54,6 +54,11 @@ body {
 	font-family: $fontFamily;
 	font-weight: $fontWeight;
 	line-height: 1;
+	background-color: $Beige;
+
+	@include mediaMax(767) {
+		font-size: 11px;
+	}
 }
 
 input,
@@ -145,8 +150,7 @@ sup {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+
 	/** Поменять на clip - если используется в проекте position: sticky */
 	overflow: hidden;
-
-	padding: 0px $mainOffset + px;
 }

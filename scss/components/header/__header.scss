@@ -1,25 +1,38 @@
 .header {
-	position: fixed;
+	position: absolute;
 	top: 81.37px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
-	z-index: 100;
-
+	z-index: 10;
+	@include mediaMax(1100) {
+		position: fixed;
+		top: 0;
+	}
 	font-size: 18px;
 	// .header__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include mediaMax(1100) {
+			padding: 0px 15px;
+			background-color: $whiteColor + fff80;
+		}
 	}
-	// .header__button-block
 	&__button-block:last-child {
 		justify-content: flex-end;
+		@include mediaMax(1100) {
+			justify-content: center;
+		}
 	}
+	// .header__button-block
 	&__button-block {
 		display: flex;
 		flex: 0 1 33.333%;
+		@include mediaMax(1100) {
+			display: none;
+		}
 	}
 	// .header__button
 	&__button {
@@ -30,11 +43,81 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 25px;
+		@include mediaMax(1100) {
+			display: none;
+		}
 	}
 	// .header__link
 	&__link {
 	}
 	// .header__logo
 	&__logo {
+		&-mobile {
+			display: none;
+			@include mediaMax(1100) {
+				display: flex;
+			}
+		}
+	}
+
+	.header__burger {
+		display: none;
+		.burger-menu {
+			z-index: 110;
+			cursor: pointer;
+		}
+		.bar {
+			display: block;
+			width: 30px;
+			height: 3px;
+			margin: 5px auto;
+			transition: all 0.3s ease-in-out;
+			background-color: $Brown;
+		}
+		.active-burger-menu {
+			.bar:nth-child(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+			.bar:nth-child(2) {
+				opacity: 0;
+			}
+			.bar:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
+		}
+		.menu {
+			opacity: 0;
+			position: absolute;
+			translate: 200%;
+			top: 0;
+			right: 0;
+			z-index: 100;
+			height: 50vh;
+			width: 50%;
+			background-color: $whiteColor + ffff9;
+			border-radius: 0px 0px 20px 20px;
+			transition: all 0.6s ease 0s;
+			padding: 15px;
+
+			font-size: 2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+			align-items: center;
+			justify-content: center;
+			@include mediaMax(767) {
+				width: 100%;
+				height: 100vh;
+				gap: 40px;
+			}
+		}
+		.active {
+			opacity: 1;
+			translate: 0;
+		}
+
+		@include mediaMax(1100) {
+			display: flex;
+		}
 	}
 }
