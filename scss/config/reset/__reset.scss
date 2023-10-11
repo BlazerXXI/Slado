@@ -130,7 +130,8 @@ sup {
 }
 
 [class*="__container"] {
-	max-width: $containerWidth px;
+	max-width: $containerWidth + px;
+	margin: auto;
 }
 [class*="-ibg_contain"] {
 	img {
@@ -140,6 +141,7 @@ sup {
 
 // Оболочка ===================================================================
 .wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;

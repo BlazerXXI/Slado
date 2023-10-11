@@ -1,15 +1,35 @@
 .header {
+	position: fixed;
+	top: 81.37px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 100;
+
+	font-size: 18px;
 	// .header__container
 	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 	// .header__button-block
+	&__button-block:last-child {
+		justify-content: flex-end;
+	}
 	&__button-block {
+		display: flex;
+		flex: 0 1 33.333%;
 	}
 	// .header__button
 	&__button {
 	}
 	// .header__nav
 	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 25px;
 	}
 	// .header__link
 	&__link {

@@ -3,6 +3,8 @@ $minWidth: 320; // минимальная ширина телефона
 $maxWidthContainer: 1310; // ширина контейнера с учетом padding слева и справа
 $containerWidth: 1279; // ширина контейнера из макета
 
+$maxHeightBgHero: 1378;
+
 $mainOffset: 15; // отступы безопасности для контейнера
 $mainFont: "Calibri"; // !указать здесь основное семейство шрифта
 $mainWeight: 400; // !указать здесь основное начертание шрифта
@@ -16,6 +18,7 @@ $whiteColor: #fff;
 $blackColor: #131313;
 $grayColor: #6f6f6f;
 $redColor: #ff4040;
+$Brown: #814624;
 
 $firstAccentColor: $blackColor;
 $secondAccentColor: $redColor;
