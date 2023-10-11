@@ -1,0 +1,150 @@
+// Reset styles
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	color: $fontColor;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html {
+	scroll-behavior: smooth;
+	transition: opacity 0.8s ease-in-out;
+	animation: openSite 0.8s ease-in-out 0s forwards;
+
+	&.lock {
+		overflow: hidden;
+		touch-action: none;
+	}
+
+	@keyframes openSite {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: $fontSize + px;
+	font-family: $fontFamily;
+	font-weight: $fontWeight;
+	line-height: 1;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button,
+a {
+	user-select: none;
+}
+
+button {
+	cursor: pointer;
+
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+sup {
+	color: inherit;
+}
+
+// Стили отзывчивых картинок (IBG) ============================================
+[class*="-ibg"] {
+	position: relative;
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+[class*="__container"] {
+	max-width: $containerWidth px;
+}
+[class*="-ibg_contain"] {
+	img {
+		object-fit: contain;
+	}
+}
+
+// Оболочка ===================================================================
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	/** Поменять на clip - если используется в проекте position: sticky */
+	overflow: hidden;
+
+	padding: 0px $mainOffset + px;
+}
