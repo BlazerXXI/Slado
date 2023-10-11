@@ -16,11 +16,9 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
+	// .hero__container
 	&__container {
-		padding: 254px 0px 0px 0px;
-		@include mediaMax(1100) {
-			padding: 154px 0px 0px 0px;
-		}
+		padding: 154px 0px 0px 0px;
 	}
 	// .hero__title
 	&__title {
