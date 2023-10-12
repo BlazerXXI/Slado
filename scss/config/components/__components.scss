@@ -45,4 +45,8 @@
 	}
 }
 .logo {
-}
+	@include mediaMax(1100) {
+		width: 130px;
+		height: auto;
+	}
+}	

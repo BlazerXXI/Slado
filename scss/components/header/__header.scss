@@ -57,10 +57,6 @@
 			display: none;
 			@include mediaMax(1100) {
 				display: flex;
-				img {
-					width: 130px;
-					height: auto;
-				}
 			}
 		}
 	}
